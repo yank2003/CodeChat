@@ -22,7 +22,7 @@ connectDB();
 //Routes
 app.use(
   cors({
-    origin: "https://code-chat-frontend.vercel.app/", //  frontend URL
+    origin: "http://localhost:5173", //  frontend URL
     credentials: true, // Allow cookies and other credentials
   })
 );
@@ -36,7 +36,7 @@ app.use("/api/ai", aiRoutes);
 const httpServer = http.createServer(app);
 const io = new Server(httpServer, {
   cors: {
-    origin: "https://code-chat-frontend.vercel.app/",
+    origin: "http://localhost:5173",
     credentials: true,
   },
 });
@@ -104,6 +104,6 @@ io.on("connection", (socket) => {
 app.get("/", (req, res) => {
   res.send("Welcome to the API");
 });
-httpServer.listen(port,'0.0.0.0:8080', () => {
+httpServer.listen(port, () => {
   console.log("Server listening on port " + port);
 });

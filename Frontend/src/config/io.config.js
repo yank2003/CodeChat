@@ -3,7 +3,7 @@ import socket from "socket.io-client";
 let socketInstance = null;
 
 export const initialiseSocket = (projectId) => {
-  socketInstance = socket.connect("http://localhost:3000", {
+  socketInstance = socket.connect("http://localhost:5000", {
     auth: {
       token: localStorage.getItem("token"),
     },
