@@ -219,7 +219,7 @@ This is a basic Express server that provides RESTful APIs to manage users. The p
   };
 
   // Send message handler
-  const sendMessageHandler = (event) => {
+  const sendMessageHandlerKey = (event) => {
     if (event.key === "Enter" || event.key === "click") {
       if (message.trim()) {
         sendMessage("project-message", {
@@ -235,6 +235,22 @@ This is a basic Express server that provides RESTful APIs to manage users. The p
 
         setMessage("");
       }
+    }
+  };
+  const sendMessageHandler = () => {
+    if (message.trim()) {
+      sendMessage("project-message", {
+        sender: user._id,
+        content: message,
+        senderEmail: user.email,
+      });
+
+      setMessages((prevMessages) => [
+        ...prevMessages,
+        { sender: user._id, content: message, senderEmail: user.email },
+      ]);
+
+      setMessage("");
     }
   };
 
@@ -306,7 +322,7 @@ This is a basic Express server that provides RESTful APIs to manage users. The p
 
         <footer className="flex items-center p-3 bg-zinc-700">
           <input
-            onKeyDown={sendMessageHandler}
+            onKeyDown={sendMessageHandlerKey}
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             className="p-2 rounded-lg outline-none w-full bg-zinc-600 text-white placeholder-gray-400"
