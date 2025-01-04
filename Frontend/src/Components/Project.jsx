@@ -220,7 +220,7 @@ This is a basic Express server that provides RESTful APIs to manage users. The p
 
   // Send message handler
   const sendMessageHandler = (event) => {
-    if (event.key === 'Enter' ){
+    if (event.key === 'Enter' || event.key === 'click'){
         if (message.trim()) {
       sendMessage("project-message", {
         sender: user._id,
@@ -315,7 +315,7 @@ This is a basic Express server that provides RESTful APIs to manage users. The p
           />
           <button
             onKeyDown={sendMessageHandler}
-            onClick={sendMessageHandler}
+           
             className="ml-3 p-2 rounded-full bg-purple-800 hover:bg-purple-700 text-white"
           >
             <i className="ri-send-plane-fill text-lg"></i>
