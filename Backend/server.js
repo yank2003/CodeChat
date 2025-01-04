@@ -22,11 +22,7 @@ connectDB();
 //Routes
 app.use(
   cors({
-<<<<<<< HEAD
-    origin: "http://localhost:5174", //  frontend URL
-=======
     origin: "https://code-chat-frontend.vercel.app", //  frontend URL
->>>>>>> 5dc0cc6f2396e1e50a486e1a9dc660e9f3781258
     credentials: true, // Allow cookies and other credentials
   })
 );
@@ -40,10 +36,7 @@ app.use("/api/ai", aiRoutes);
 const httpServer = http.createServer(app);
 const io = new Server(httpServer, {
   cors: {
-<<<<<<< HEAD
-=======
     origin: "https://code-chat-frontend.vercel.app",
->>>>>>> 5dc0cc6f2396e1e50a486e1a9dc660e9f3781258
     credentials: true,
   },
 });
