@@ -104,6 +104,6 @@ io.on("connection", (socket) => {
 app.get("/", (req, res) => {
   res.send("Welcome to the API");
 });
-httpServer.listen(port, () => {
+httpServer.listen(port,'0.0.0.0:8080', () => {
   console.log("Server listening on port " + port);
 });
