@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@media (min-width: 412px) {
+  .bigname {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+.message-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.message-scrollbar::-webkit-scrollbar-track {
+  background-color: #2d2d2d;
+}
+
+.message-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #4a4a4a;
+  border-radius: 10px;
+  border: 2px solid #2d2d2d;
+}
+
+.message-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #6c6c6c;
+}
+
