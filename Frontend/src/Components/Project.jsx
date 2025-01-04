@@ -219,8 +219,9 @@ This is a basic Express server that provides RESTful APIs to manage users. The p
   };
 
   // Send message handler
-  const sendMessageHandler = () => {
-    if (message.trim()) {
+  const sendMessageHandler = (event) => {
+    if (event.key === 'Enter' ){
+        if (message.trim()) {
       sendMessage("project-message", {
         sender: user._id,
         content: message,
@@ -234,6 +235,8 @@ This is a basic Express server that provides RESTful APIs to manage users. The p
 
       setMessage("");
     }
+    }
+  
   };
 
   const handleFileClick = (fileName) => {
@@ -311,6 +314,7 @@ This is a basic Express server that provides RESTful APIs to manage users. The p
             placeholder="Type a message..."
           />
           <button
+            onKeyDown={sendMessageHandler}
             onClick={sendMessageHandler}
             className="ml-3 p-2 rounded-full bg-purple-800 hover:bg-purple-700 text-white"
           >
