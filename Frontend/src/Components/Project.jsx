@@ -220,23 +220,22 @@ This is a basic Express server that provides RESTful APIs to manage users. The p
 
   // Send message handler
   const sendMessageHandler = (event) => {
-    if (event.key === 'Enter' || event.key === 'click'){
-        if (message.trim()) {
-      sendMessage("project-message", {
-        sender: user._id,
-        content: message,
-        senderEmail: user.email,
-      });
+    if (event.key === "Enter" || event.key === "click") {
+      if (message.trim()) {
+        sendMessage("project-message", {
+          sender: user._id,
+          content: message,
+          senderEmail: user.email,
+        });
 
-      setMessages((prevMessages) => [
-        ...prevMessages,
-        { sender: user._id, content: message, senderEmail: user.email },
-      ]);
+        setMessages((prevMessages) => [
+          ...prevMessages,
+          { sender: user._id, content: message, senderEmail: user.email },
+        ]);
 
-      setMessage("");
+        setMessage("");
+      }
     }
-    }
-  
   };
 
   const handleFileClick = (fileName) => {
@@ -307,6 +306,7 @@ This is a basic Express server that provides RESTful APIs to manage users. The p
 
         <footer className="flex items-center p-3 bg-zinc-700">
           <input
+            onKeyDown={sendMessageHandler}
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             className="p-2 rounded-lg outline-none w-full bg-zinc-600 text-white placeholder-gray-400"
@@ -314,8 +314,7 @@ This is a basic Express server that provides RESTful APIs to manage users. The p
             placeholder="Type a message..."
           />
           <button
-            onKeyDown={sendMessageHandler}
-           
+            onClick={sendMessageHandler}
             className="ml-3 p-2 rounded-full bg-purple-800 hover:bg-purple-700 text-white"
           >
             <i className="ri-send-plane-fill text-lg"></i>
