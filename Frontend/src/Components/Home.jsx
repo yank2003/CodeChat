@@ -1,12 +1,13 @@
-import { useContext, useState } from "react";
-import { UserContext } from "../context/user.context.jsx";
+// import { useContext } from "react";
+// import { UserContext } from "../context/user.context.jsx";
+import { useState } from "react";
 import axios from "../config/axiosconfig.js";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
   const navigate = useNavigate();
-  const { user } = useContext(UserContext);
+  // const { user } = useContext(UserContext);
   const [isModal, setModal] = useState(false);
   const [projectName, setProjectName] = useState("");
   const [projects, setProjects] = useState([]);
@@ -22,7 +23,7 @@ const HomePage = () => {
       });
   }, []);
 
-  const handleCreate = () => {};
+  // const handleCreate = () => {};
 
   const handleCancel = () => {
     setProjectName("");
@@ -94,8 +95,8 @@ const HomePage = () => {
           </form>
         )}
 
-        <div className="bg-gray-800 w-[25vw] h-[70vh] p-6 rounded-lg shadow-md">
-          <h2 className="text-2xl font-semibold mb-4 border-b border-gray-700 pb-2">
+        <div className="bg-gray-800 md:w-[30vw] w-[40vw]  h-[40vh] md:h-[70vh] p-6 rounded-lg shadow-md">
+          <h2 className="text-2xl font-semibold mb-4 border-b max-sm:text-xs border-gray-700 pb-2">
             Your Projects
           </h2>
           <ul className="space-y-4">
@@ -108,14 +109,16 @@ const HomePage = () => {
                       state: { project },
                     });
                   }}
-                  className="bg-gray-700 p-4 rounded-lg hover:bg-gray-600 cursor-pointer flex justify-between items-center"
+                  className="bg-gray-700 p-1 md:p-4 px-2  rounded-lg hover:bg-gray-600 cursor-pointer flex justify-between items-center"
                 >
                   <div>
-                    <p className="text-lg font-medium">{project.name}</p>
+                    <p className="text-xs md:text-lg font-medium">{project.name}</p>
                   </div>
-                  <div className="text-sm text-gray-400 flex items-center">
-                    <i className="ri-user-line mr-2"></i>
-                    <span>Collaborators: {project.users.length}</span>
+                  <div className="text-xs text-gray-400 flex items-center">
+                    <i className="ri-user-line mr-0 sm:mr-1 "></i>
+                    <span className="before:content-[''] md:before:content-['Collaborators:_']">
+                       {project.users.length}
+                    </span>
                   </div>
                 </li>
               ))

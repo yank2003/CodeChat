@@ -252,7 +252,7 @@ This is a basic Express server that provides RESTful APIs to manage users. The p
 
   return (
     <main className="h-screen w-screen flex relative">
-      <section className="bg-zinc-900 h-full w-[30vw] flex flex-col justify-between relative">
+      <section className="bg-zinc-900 h-full w-[60vw] sm:w-[30vw] flex flex-col justify-between relative">
         <header className="w-full flex justify-between py-3 px-2 bg-zinc-800 shadow-md">
           <button
             onClick={() => setIsModalOpen(true)}
@@ -348,7 +348,7 @@ This is a basic Express server that provides RESTful APIs to manage users. The p
 
       <section className="flex-grow flex bg-zinc-900">
         {/*  File Names */}
-        <div className="h-[98%] mt-2 rounded-lg w-[10vw] ml-2  bg-purple-800  overflow-y-auto">
+        <div className="h-[98%] mt-2 rounded-lg w-[15vw]  sm:block sm:w-[10vw]  ml-2  bg-purple-800  overflow-y-auto">
           <h2 className="text-white font-bold uppercase text-lg mb-2 px-4 py-2">
             Files<i className="ri-file-4-line text-black ml-1"></i>
           </h2>
@@ -366,8 +366,8 @@ This is a basic Express server that provides RESTful APIs to manage users. The p
         </div>
 
         {/*  Code Editor */}
-        <div className="flex-grow p-4 w-[100px] overflow-hidden">
-          <h1 className="text-purple-800 font-bold uppercase text-lg mb-2">
+        <div className="flex-grow px-1 py-1 sm:p-4  w-[25vw] sm:w-[50vw] overflow-hidden">
+          <h1 className="text-purple-800 font-bold uppercase text-lg  sm:mb-2">
             Code Editor <i className="ri-code-line "></i>
           </h1>
           {openedFiles.length > 0 && (
@@ -391,7 +391,7 @@ This is a basic Express server that provides RESTful APIs to manage users. The p
           {currentFile ? (
             <MonacoEditor
               theme="vs-dark"
-              height="85vh"
+              height="80vh"
               language="javascript"
               value={currentFile.content}
               options={{
