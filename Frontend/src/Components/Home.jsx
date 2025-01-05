@@ -51,7 +51,7 @@ const HomePage = () => {
         <div className="flex justify-between items-center mb-6">
           <button
             onClick={() => setModal(true)}
-            className="bg-purple-800 text-white px-4 py-2 rounded-lg hover:bg-purple-700 focus:ring-4 focus:ring-purple-500"
+            className="bg-zinc-900 text-white px-4 py-2 rounded-lg hover:bg-zinc-700 focus:ring-4 focus:ring-purple-500"
           >
             <i className="ri-add-line mr-2"></i> New Project
           </button>
@@ -74,7 +74,7 @@ const HomePage = () => {
                 <div className="flex justify-end space-x-4">
                   <button
                     onClick={handleCancel}
-                    className="bg-gray-600 px-4 py-2 rounded-lg text-white hover:bg-gray-700"
+                    className="bg-gray-900 px-4 py-2 rounded-lg text-white hover:bg-gray-700"
                   >
                     Cancel
                   </button>
@@ -104,7 +104,7 @@ const HomePage = () => {
                       state: { project },
                     });
                   }}
-                  className="bg-purple-700 p-1 md:p-4 px-2 rounded-lg hover:bg-purple-600 cursor-pointer flex justify-between items-center"
+                  className="bg-zinc-900 p-1 md:p-4 px-2 rounded-lg hover:bg-zinc-600 cursor-pointer flex justify-between items-center"
                 >
                   <div>
                     <p className="text-xs md:text-lg font-medium">
