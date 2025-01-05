@@ -1,5 +1,3 @@
-// import { useContext } from "react";
-// import { UserContext } from "../context/user.context.jsx";
 import { useState } from "react";
 import axios from "../config/axiosconfig.js";
 import { useEffect } from "react";
@@ -7,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
   const navigate = useNavigate();
-  // const { user } = useContext(UserContext);
   const [isModal, setModal] = useState(false);
   const [projectName, setProjectName] = useState("");
   const [projects, setProjects] = useState([]);
@@ -22,8 +19,6 @@ const HomePage = () => {
         console.log("Failed to get projects");
       });
   }, []);
-
-  // const handleCreate = () => {};
 
   const handleCancel = () => {
     setProjectName("");
@@ -47,8 +42,8 @@ const HomePage = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 min-h-screen text-white">
-      <header className="py-4 px-6 bg-gray-800 shadow-lg">
+    <div className="bg-gradient-to-r from-purple-900 via-purple-800 to-purple-900 min-h-screen text-white">
+      <header className="py-4 px-6 bg-purple-800 shadow-lg">
         <h1 className="text-3xl font-bold">Project Dashboard</h1>
       </header>
 
@@ -56,7 +51,7 @@ const HomePage = () => {
         <div className="flex justify-between items-center mb-6">
           <button
             onClick={() => setModal(true)}
-            className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 focus:ring-4 focus:ring-blue-500"
+            className="bg-purple-800 text-white px-4 py-2 rounded-lg hover:bg-purple-700 focus:ring-4 focus:ring-purple-500"
           >
             <i className="ri-add-line mr-2"></i> New Project
           </button>
@@ -65,7 +60,7 @@ const HomePage = () => {
         {isModal && (
           <form onSubmit={createProject}>
             <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-75">
-              <div className="bg-gray-800 p-6 rounded-lg w-96 shadow-xl">
+              <div className="bg-purple-800 p-6 rounded-lg w-96 shadow-xl">
                 <h3 className="text-xl font-semibold mb-4 text-center">
                   Create New Project
                 </h3>
@@ -73,7 +68,7 @@ const HomePage = () => {
                   type="text"
                   value={projectName}
                   onChange={(e) => setProjectName(e.target.value)}
-                  className="w-full p-3 text-gray-800 rounded-lg mb-4 outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full p-3 text-gray-800 rounded-lg mb-4 outline-none focus:ring-2 focus:ring-purple-500"
                   placeholder="Project Name"
                 />
                 <div className="flex justify-end space-x-4">
@@ -85,7 +80,7 @@ const HomePage = () => {
                   </button>
                   <button
                     type="submit"
-                    className="bg-blue-600 px-4 py-2 rounded-lg text-white hover:bg-blue-700"
+                    className="bg-purple-800 px-4 py-2 rounded-lg text-white hover:bg-purple-700"
                   >
                     Create
                   </button>
@@ -95,8 +90,8 @@ const HomePage = () => {
           </form>
         )}
 
-        <div className="bg-gray-800 md:w-[30vw] w-[40vw]  h-[40vh] md:h-[70vh] p-6 rounded-lg shadow-md">
-          <h2 className="text-2xl font-semibold mb-4 border-b max-sm:text-xs border-gray-700 pb-2">
+        <div className="bg-purple-800 md:w-[30vw] w-[40vw]  h-[40vh] md:h-[70vh] p-6 rounded-lg shadow-md">
+          <h2 className="text-2xl font-semibold mb-4 border-b max-sm:text-xs border-purple-700 pb-2">
             Your Projects
           </h2>
           <ul className="space-y-4">
@@ -109,15 +104,17 @@ const HomePage = () => {
                       state: { project },
                     });
                   }}
-                  className="bg-gray-700 p-1 md:p-4 px-2  rounded-lg hover:bg-gray-600 cursor-pointer flex justify-between items-center"
+                  className="bg-purple-700 p-1 md:p-4 px-2 rounded-lg hover:bg-purple-600 cursor-pointer flex justify-between items-center"
                 >
                   <div>
-                    <p className="text-xs md:text-lg font-medium">{project.name}</p>
+                    <p className="text-xs md:text-lg font-medium">
+                      {project.name}
+                    </p>
                   </div>
                   <div className="text-xs text-gray-400 flex items-center">
                     <i className="ri-user-line mr-0 sm:mr-1 "></i>
                     <span className="before:content-[''] md:before:content-['Collaborators:_']">
-                       {project.users.length}
+                      {project.users.length}
                     </span>
                   </div>
                 </li>

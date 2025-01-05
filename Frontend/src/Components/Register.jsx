@@ -28,9 +28,11 @@ const Register = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-900 text-white">
-      <div className="w-full max-w-[40vh]  sm:max-w-md p-6 bg-gray-800 rounded-lg shadow-md">
-        <h2 className="text-2xl font-semibold text-center mb-6">Sign Up</h2>
+    <div className="flex justify-center items-center min-h-screen bg-black text-white">
+      <div className="w-full max-w-[40vh] sm:max-w-md p-6 bg-purple-800 rounded-lg shadow-md">
+        <h2 className="text-3xl font-semibold text-center mb-6 text-white">
+          **CODECHAT**
+        </h2>
         <form onSubmit={handleRegister}>
           <div className="mb-4">
             <label htmlFor="email" className="block text-sm font-medium mb-2">
@@ -39,7 +41,7 @@ const Register = () => {
             <input
               type="email"
               id="email"
-              className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="w-full px-4 py-2 bg-purple-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
               placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -56,7 +58,7 @@ const Register = () => {
             <input
               type="password"
               id="password"
-              className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="w-full px-4 py-2 bg-purple-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
               placeholder="Enter your password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
