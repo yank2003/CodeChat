@@ -10,10 +10,6 @@ const Userauth = ({ children }) => {
     if (user) {
       return setloading(false);
     }
-
-    if (!user) {
-      navigate("/login");
-    }
   }, []);
 
   if (loading) {
