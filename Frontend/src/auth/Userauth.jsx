@@ -5,14 +5,12 @@ const Userauth = ({ children }) => {
   const navigate = useNavigate();
   const { user } = useContext(UserContext);
   const [loading, setloading] = useState(true);
-  const token = localStorage.getItem("token");
+
   useEffect(() => {
     if (user) {
       return setloading(false);
     }
-    if (!token) {
-      navigate("/login");
-    }
+
     if (!user) {
       navigate("/login");
     }
