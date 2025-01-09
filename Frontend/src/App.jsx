@@ -7,25 +7,11 @@ import Userauth from "./auth/Userauth.jsx";
 function App() {
   return (
     <Routes>
-      <Route
-        path="/home"
-        element={
-          <Userauth>
-            <Home />
-          </Userauth>
-        }
-      />
+      <Route path="/home" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/" element={<Login />} />
       <Route path="/register" element={<Register />} />
-      <Route
-        path="/project"
-        element={
-          <Userauth>
-            <Project />
-          </Userauth>
-        }
-      />
+      <Route path="/project" element={<Project />} />
     </Routes>
   );
 }
