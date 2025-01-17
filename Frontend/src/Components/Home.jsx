@@ -16,6 +16,7 @@ const HomePage = () => {
       .get("/project/all")
       .then((res) => {
         setProjects(res.data.projects);
+        toast.success("Logged in successfully");
       })
       .catch(() => {
         console.log("Failed to get projects");
