@@ -94,7 +94,7 @@ const HomePage = () => {
           </form>
         )}
 
-        <div className="bg-purple-800 md:w-[30vw] w-[40vw]  h-full md:h-[70vh] p-6 rounded-lg shadow-md">
+        <div className="bg-purple-800 md:w-[30vw] w-[40vw]  overflow-y-auto p-6 rounded-lg shadow-md">
           <h2 className="text-2xl font-semibold mb-4 border-b max-sm:text-xs border-purple-700 pb-2">
             Your Projects
           </h2>
