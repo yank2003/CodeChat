@@ -19,11 +19,11 @@ const Login = () => {
         password,
       })
       .then((res) => {
+        toast.success("Logged in successfully");
         localStorage.setItem("token", res.data.token);
         console.log(res.data);
         setUser(res.data.user);
         navigate("/home");
-        toast.success("Logged in successfully");
       })
       .catch((error) => {
         console.log(error);
