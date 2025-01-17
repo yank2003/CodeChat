@@ -3,7 +3,7 @@ import Login from "./Components/Login.jsx";
 import Register from "./Components/Register.jsx";
 import Home from "./Components/Home.jsx";
 import Project from "./Components/Project.jsx";
-import Userauth from "./auth/Userauth.jsx";
+
 function App() {
   return (
     <Routes>

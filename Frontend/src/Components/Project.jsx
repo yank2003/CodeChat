@@ -9,6 +9,8 @@ import {
 import { UserContext } from "../context/user.context.jsx";
 import Markdown from "markdown-to-jsx";
 import MonacoEditor from "@monaco-editor/react"; // Import Monaco Editor
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Project = () => {
   const messageBox = useRef();
@@ -152,6 +154,8 @@ This is a basic Express server that provides RESTful APIs to manage users. The p
         setSelectedUsers([]);
         setIsModalOpen(false);
         setErrorMessage("");
+
+        toast.success("Collaborator added successfully");
       })
       .catch((err) => {
         console.error(err);
@@ -278,6 +282,7 @@ This is a basic Express server that provides RESTful APIs to manage users. The p
           >
             <i className="ri-add-line mr-1"></i>Add Collaborators
           </button>
+          <ToastContainer />
           <button onClick={() => setIsPanel(true)}>
             <i className="ri-group-fill text-purple-800 text-2xl"></i>
           </button>
