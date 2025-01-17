@@ -52,7 +52,7 @@ const HomePage = () => {
       <header className="py-4 px-6 bg-purple-800 shadow-lg">
         <h1 className="text-3xl font-bold">Project Dashboard</h1>
       </header>
-
+      <ToastContainer />
       <main className="p-6">
         <div className="flex justify-between items-center mb-6">
           <button
