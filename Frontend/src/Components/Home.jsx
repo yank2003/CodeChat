@@ -40,11 +40,11 @@ const HomePage = () => {
       .then((res) => {
         console.log(res);
         setModal(false);
-        toast.success("Project created successfully");
       })
       .catch(() => {
         console.log("Failed to create project");
       });
+    toast.success("Project created successfully");
   };
 
   return (
