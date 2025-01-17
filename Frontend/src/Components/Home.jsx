@@ -10,6 +10,9 @@ const HomePage = () => {
   const [isModal, setModal] = useState(false);
   const [projectName, setProjectName] = useState("");
   const [projects, setProjects] = useState([]);
+  useEffect(() => {
+    toast.success("Logged in Successfully");
+  });
 
   useEffect(() => {
     axios
