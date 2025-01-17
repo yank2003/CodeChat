@@ -74,8 +74,8 @@ const Register = () => {
           >
             Sign Up
           </button>
-          <ToastContainer />
         </form>
+        <ToastContainer />
         <p className="text-center text-sm mt-4">
           Already have an account?{" "}
           <a

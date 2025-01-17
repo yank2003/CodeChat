@@ -12,7 +12,7 @@ const HomePage = () => {
   const [projects, setProjects] = useState([]);
   useEffect(() => {
     toast.success("Logged in Successfully");
-  });
+  }, []);
 
   useEffect(() => {
     axios
