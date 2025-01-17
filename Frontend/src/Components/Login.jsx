@@ -22,12 +22,12 @@ const Login = () => {
         localStorage.setItem("token", res.data.token);
         console.log(res.data);
         setUser(res.data.user);
-        toast.success("Logged in successfully");
         navigate("/home");
       })
       .catch((error) => {
         console.log(error);
       });
+    toast.success("Logged in successfully");
   };
 
   return (
