@@ -2,6 +2,8 @@ import { useState, useContext } from "react";
 import axios from "../config/axiosconfig.js";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../context/user.context.jsx";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -21,6 +23,7 @@ const Register = () => {
         localStorage.setItem("token", res.data.token);
         setUser(res.data.user);
         navigate("/home");
+        toast.success("Registered successfully");
       })
       .catch((error) => {
         console.error("Error registering user", error);
@@ -71,6 +74,7 @@ const Register = () => {
           >
             Sign Up
           </button>
+          <ToastContainer />
         </form>
         <p className="text-center text-sm mt-4">
           Already have an account?{" "}

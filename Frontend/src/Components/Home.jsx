@@ -2,6 +2,8 @@ import { useState } from "react";
 import axios from "../config/axiosconfig.js";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -35,6 +37,7 @@ const HomePage = () => {
       .then((res) => {
         console.log(res);
         setModal(false);
+        toast.success("Project created successfully");
       })
       .catch(() => {
         console.log("Failed to create project");
@@ -84,6 +87,7 @@ const HomePage = () => {
                   >
                     Create
                   </button>
+                  <ToastContainer />
                 </div>
               </div>
             </div>

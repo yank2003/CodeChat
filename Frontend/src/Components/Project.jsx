@@ -159,7 +159,7 @@ This is a basic Express server that provides RESTful APIs to manage users. The p
       })
       .catch((err) => {
         console.error(err);
-        setErrorMessage("A user is already in the project");
+        toast.error("User already in project");
       });
   };
 

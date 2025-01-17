@@ -2,6 +2,8 @@ import { useState, useContext } from "react";
 import axios from "../config/axiosconfig.js";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../context/user.context.jsx";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -21,6 +23,7 @@ const Login = () => {
         console.log(res.data);
         setUser(res.data.user);
         navigate("/home");
+        toast.success("Logged in successfully");
       })
       .catch((error) => {
         console.log(error);
@@ -52,7 +55,10 @@ const Login = () => {
             />
           </div>
           <div className="mb-6">
-            <label htmlFor="password" className="block text-sm font-medium mb-2">
+            <label
+              htmlFor="password"
+              className="block text-sm font-medium mb-2"
+            >
               Password
             </label>
             <input
@@ -71,6 +77,7 @@ const Login = () => {
           >
             Login
           </button>
+          <ToastContainer />
         </form>
         <p className="text-center text-sm mt-4">
           Don’t have an account?{" "}
