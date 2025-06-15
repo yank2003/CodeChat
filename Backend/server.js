@@ -36,7 +36,7 @@ app.use("/api/ai", aiRoutes);
 const httpServer = http.createServer(app);
 const io = new Server(httpServer, {
   cors: {
-    origin: "https://localhost:5173",
+    origin: "https://code-chat-frontend.vercel.app",
     credentials: true,
   },
 });
