@@ -22,7 +22,7 @@ connectDB();
 //Routes
 app.use(
   cors({
-    origin: "https://code-chat-frontend.vercel.app", //  frontend URL
+    origin: "https://localhost:5173/", //  frontend URL
     credentials: true, // Allow cookies and other credentials
   })
 );
@@ -36,7 +36,7 @@ app.use("/api/ai", aiRoutes);
 const httpServer = http.createServer(app);
 const io = new Server(httpServer, {
   cors: {
-    origin: "https://code-chat-frontend.vercel.app",
+    origin: "https://localhost:5173",
     credentials: true,
   },
 });
@@ -93,6 +93,13 @@ io.on("connection", (socket) => {
       return;
     }
     socket.broadcast.to(socket.roomId).emit("project-message", data);
+  });
+  socket.on("code-change", async (data) => {
+    const message = data.content;
+    io.to(socket.roomId).emit("code-update", {
+      content: message,
+      fileName: data.fileName,
+    });
   });
   // socket.on("event", (data) => {});
   socket.on("disconnect", () => {

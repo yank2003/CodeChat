@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: import.meta.env.VITE_API_URL,
+  baseURL: "https://localhost:5173/api",
   headers: {
     Authorization: `Bearer ${localStorage.getItem("token")}`,
   },

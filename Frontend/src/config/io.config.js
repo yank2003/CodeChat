@@ -3,7 +3,7 @@ import socket from "socket.io-client";
 let socketInstance = null;
 
 export const initialiseSocket = (projectId) => {
-  socketInstance = socket.connect("https://codechat-backend-poss.onrender.com", {
+  socketInstance = socket.connect("https://localhost:5173", {
     auth: {
       token: localStorage.getItem("token"),
     },
