@@ -22,7 +22,7 @@ connectDB();
 //Routes
 app.use(
   cors({
-    origin: "https://localhost:5173/", //  frontend URL
+    origin: "https://code-chat-frontend.vercel.app/", //  frontend URL
     credentials: true, // Allow cookies and other credentials
   })
 );
